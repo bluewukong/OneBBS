@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # PostgreSQL数据库
+  db:
+    image: postgres:15-alpine
+    container_name: onebbs-db
+    environment:
+      POSTGRES_DB: onebbs
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - onebbs-network
+
+  # 应用程序
+  app:
+    build: .
+    container_name: onebbs-app
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: onebbs
+      DB_USER: postgres
+      DB_PASSWORD: password
+      JWT_SECRET: your_jwt_secret_key
+      JWT_EXPIRES_IN: 24h
+      MAX_FILE_SIZE: 5242880
+      UPLOAD_DIR: ./uploads
+      MAX_POSTS_PER_DAY: 10
+      MAX_REPLIES_PER_DAY: 20
+      MAX_TOTAL_POSTS: 1000
+      HOME_PAGE_POSTS: 100
+      DECAY_FACTOR: 0.01
+    volumes:
+      - ./uploads:/app/uploads
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - onebbs-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  onebbs-network:
+    driver: bridge

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes BBS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">📝 Sticky Notes BBS</h1>
+            <nav class="nav">
+                <div class="language-switcher">
+                    <select id="languageSelect" class="language-select">
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                    </select>
+                </div>
+                <div id="authSection" class="auth-section">
+                    <button id="loginBtn" class="btn btn-primary">Login</button>
+                    <button id="registerBtn" class="btn btn-secondary">Register</button>
+                </div>
+                <div id="userSection" class="user-section" style="display: none;">
+                    <span id="username" class="username"></span>
+                    <button id="settingsBtn" class="btn btn-secondary">⚙️ Settings</button>
+                    <button id="logoutBtn" class="btn btn-danger">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main">
+        <div class="container">
+            <!-- 创建帖子按钮 -->
+            <div class="create-post-section">
+                <button id="createPostBtn" class="btn btn-success btn-large" style="display: none;">
+                    ➕ 创建新便签
+                </button>
+            </div>
+
+            <!-- 帖子列表 -->
+            <div id="postsContainer" class="posts-container">
+                <!-- 帖子将通过JavaScript动态生成 -->
+            </div>
+
+            <!-- 加载更多按钮 -->
+            <div class="load-more-section" style="display: none;">
+                <button id="loadMoreBtn" class="btn btn-primary">加载更多</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody">
+                <!-- 模态框内容将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 帖子详情模态框 -->
+    <div id="postDetailModal" class="modal modal-large">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="postDetailBody">
+                <!-- 帖子详情内容将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 修改密码模态框 -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="changePasswordBody">
+                <!-- 修改密码表单将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 修改用户信息模态框 -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="profileBody">
+                <!-- 修改用户信息表单将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="script.js"></script>
+</body>
+</html>

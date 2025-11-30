@@ -1,0 +1,53 @@
+{
+  "app": {
+    "title": "Sticky Notes BBS",
+    "logo": "📝 Sticky Notes BBS"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Submit",
+    "loginTitle": "Login",
+    "registerTitle": "Register",
+    "loginSuccess": "Login successful!",
+    "registerSuccess": "Registration successful!",
+    "logoutSuccess": "Logout successful!"
+  },
+  "posts": {
+    "createPost": "Create New Note",
+    "title": "Title",
+    "content": "Content",
+    "color": "Color",
+    "publish": "Publish",
+    "viewCount": "Views",
+    "replyCount": "Replies",
+    "likeCount": "Likes",
+    "createdAt": "Created",
+    "loadMore": "Load More",
+    "noPosts": "No posts yet. Be the first to create one!",
+    "delete": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this post?",
+    "deleteSuccess": "Post deleted successfully!"
+  },
+  "replies": {
+    "addReply": "Add Reply",
+    "reply": "Reply",
+    "noReplies": "No replies yet. Be the first to reply!",
+    "replySuccess": "Reply added successfully!"
+  },
+  "errors": {
+    "general": "Something went wrong!",
+    "notFound": "Not Found",
+    "unauthorized": "Please login first",
+    "validation": "Please check your input"
+  },
+  "messages": {
+    "welcome": "Welcome to Sticky Notes BBS!",
+    "loading": "Loading...",
+    "success": "Operation completed successfully!"
+  }
+}
