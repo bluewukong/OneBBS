@@ -176,17 +176,43 @@ Create the database in PostgreSQL:
 CREATE DATABASE onebbs;
 ```
 
-5. **Run the Project**
+5. **Initialize Database Schema**
+
+Use the provided `database.sql` file to set up the database schema:
 
 ```bash
-# Development mode
-npm run dev
+# Method 1: Using psql command line
+psql -h localhost -U postgres -d onebbs -f database.sql
 
-# Production mode
-npm start
+# Method 2: Using PostgreSQL client (like pgAdmin)
+# Open the database.sql file and execute it in the onebbs database
 ```
 
-6. **Access the Application**
+The `database.sql` file will create the following tables:
+- `users` - User information table
+- `posts` - Post information table  
+- `replies` - Reply information table
+- Indexes for performance optimization
+
+6. **Verify Database Setup**
+
+ After running the SQL script, you can verify the tables were created:
+
+ ```sql
+ \dt onebbs;  -- List tables in onebbs database
+ ```
+
+ 7. **Run the Project**
+
+ ```bash
+ # Development mode
+ npm run dev
+
+ # Production mode
+ npm start
+ ```
+
+ 8. **Access the Application**
 
 Open your browser and visit: `http://localhost:3000`
 
